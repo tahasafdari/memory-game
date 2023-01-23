@@ -1,4 +1,9 @@
+import Database.dao.IMemoryGameDAO;
+import Database.dao.MemoryGameDAO;
+import Database.datasource.SqlJpaConn;
+import Database.entity.Account;
 import Model.*;
+import jakarta.persistence.EntityManager;
 
 import java.util.ArrayList;
 
@@ -7,7 +12,7 @@ public class Main {
 
         //User ja hänen tuloslistansa haetaan oikeassa versiossa databasesta sovelluksen käynnistyttyä.
         ArrayList<Integer> tuloslista = new ArrayList<>();
-        IUser user = new User("kalle",1,tuloslista);
+        IUser user = new Model.User("kalle",1,tuloslista);
         user.addScore(3500);
         user.addScore(1200);
 
@@ -26,6 +31,17 @@ public class Main {
             );
         }
 
+        //tessstti
+        EntityManager em = SqlJpaConn.getInstance();
+        IMemoryGameDAO dao = new MemoryGameDAO();
+        Account account = new Account("toni", "tiikeri");
+
+        dao.saveUser(account);
+
+        System.out.println("note to self: place the code INSIDE the main mehtod");
 
     }
+
+
+
 }
