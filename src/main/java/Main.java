@@ -38,7 +38,7 @@ public class Main {
 
         dao.saveUser(account);
 
-        System.out.println("note to self: place the code INSIDE the main mehtod");
+        System.out.println("done");
 
     }
 
