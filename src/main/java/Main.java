@@ -7,6 +7,7 @@ import jakarta.persistence.EntityManager;
 
 import java.util.ArrayList;
 
+
 public class Main {
     public static void main(String[] args) {
 
@@ -34,7 +35,7 @@ public class Main {
         //tessstti
         EntityManager em = SqlJpaConn.getInstance();
         IMemoryGameDAO dao = new MemoryGameDAO();
-        Account account = new Account("toni", "tiikeri");
+        Account account = new Account("tony", "tiger");
 
         dao.saveUser(account);
 
